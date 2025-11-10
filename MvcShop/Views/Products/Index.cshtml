@@ -1,0 +1,35 @@
+@model IEnumerable<MvcShop.Models.Category>
+
+@{
+    ViewData["Title"] = "Produtos";
+}
+
+<div class="container py-4">
+    <h2 class="mb-4">Produtos por Categoria</h2>
+
+    @foreach(var cat in Model)
+    {
+        <div class="mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h4 class="mb-0">@cat.Name</h4>
+                <a class="btn btn-sm btn-link" href="/Products?category=@cat.Id">Ver tudo</a>
+            </div>
+
+            <div class="row g-3">
+                @foreach(var p in cat.Products)
+                {
+                    <div class="col-6 col-sm-4 col-md-3">
+                        <div class="card h-100 shadow-sm">
+                            <img src="@(p.ImageUrl ?? "https://via.placeholder.com/300x200?text=Produto")" class="card-img-top" style="height:160px;object-fit:cover;" />
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fs-6">@p.Name</h5>
+                                <p class="text-muted mb-2">@p.Price.ToString("C")</p>
+                                <a href="/Products/Details/@p.Id" class="btn btn-sm btn-primary mt-auto">Ver detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>

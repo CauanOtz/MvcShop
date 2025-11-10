@@ -1,0 +1,53 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\cicer\\OneDrive\\Documentos\\FATEC\\MVC_DESIGNPATTERN\\MvcShop\\wwwroot\\uploads\\.gitkeep",
+      "PackagePath": "staticwebassets\\uploads\\.gitkeep"
+    },
+    {
+      "Id": "C:\\Users\\cicer\\OneDrive\\Documentos\\FATEC\\MVC_DESIGNPATTERN\\MvcShop\\wwwroot\\uploads\\373a1f5e-6d1a-45b7-a456-2b94daa26a65.jpg",
+      "PackagePath": "staticwebassets\\uploads\\373a1f5e-6d1a-45b7-a456-2b94daa26a65.jpg"
+    },
+    {
+      "Id": "C:\\Users\\cicer\\OneDrive\\Documentos\\FATEC\\MVC_DESIGNPATTERN\\MvcShop\\wwwroot\\uploads\\3e48696b-182e-4925-bcb9-d285c40ea903.jpg",
+      "PackagePath": "staticwebassets\\uploads\\3e48696b-182e-4925-bcb9-d285c40ea903.jpg"
+    },
+    {
+      "Id": "C:\\Users\\cicer\\OneDrive\\Documentos\\FATEC\\MVC_DESIGNPATTERN\\MvcShop\\wwwroot\\uploads\\4a567fe7-2a32-4d64-9b9a-3b8642059f81.jpg",
+      "PackagePath": "staticwebassets\\uploads\\4a567fe7-2a32-4d64-9b9a-3b8642059f81.jpg"
+    },
+    {
+      "Id": "C:\\Users\\cicer\\OneDrive\\Documentos\\FATEC\\MVC_DESIGNPATTERN\\MvcShop\\wwwroot\\uploads\\5855898a-fdb8-4c73-9fc6-6d1d74c9706d.jpg",
+      "PackagePath": "staticwebassets\\uploads\\5855898a-fdb8-4c73-9fc6-6d1d74c9706d.jpg"
+    },
+    {
+      "Id": "C:\\Users\\cicer\\OneDrive\\Documentos\\FATEC\\MVC_DESIGNPATTERN\\MvcShop\\wwwroot\\uploads\\7d67cb2f-cee2-4bdc-ab18-7fa1786cd148.jpg",
+      "PackagePath": "staticwebassets\\uploads\\7d67cb2f-cee2-4bdc-ab18-7fa1786cd148.jpg"
+    },
+    {
+      "Id": "C:\\Users\\cicer\\OneDrive\\Documentos\\FATEC\\MVC_DESIGNPATTERN\\MvcShop\\wwwroot\\uploads\\a3be44bd-4b05-4b07-bb74-a7f446bc1a53.jpg",
+      "PackagePath": "staticwebassets\\uploads\\a3be44bd-4b05-4b07-bb74-a7f446bc1a53.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MvcShop.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.MvcShop.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.MvcShop.props",
+      "PackagePath": "build\\MvcShop.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.MvcShop.props",
+      "PackagePath": "buildMultiTargeting\\MvcShop.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.MvcShop.props",
+      "PackagePath": "buildTransitive\\MvcShop.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

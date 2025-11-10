@@ -1,0 +1,24 @@
+@model MvcShop.Models.CarouselImage
+
+@{
+    ViewData["Title"] = "Adicionar Imagem ao Carousel";
+}
+
+<h2>Adicionar Imagem</h2>
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label class="form-label">Título</label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Imagem</label>
+        <input type="file" name="imageFile" class="form-control" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Ordem</label>
+        <input asp-for="SortOrder" class="form-control" />
+    </div>
+    <button class="btn btn-primary">Adicionar</button>
+    <a class="btn btn-secondary ms-2" href="/Admin/Carousel">Cancelar</a>
+</form>

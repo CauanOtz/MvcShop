@@ -1,0 +1,26 @@
+@model IEnumerable<MvcShop.Models.Category>
+
+@{
+    ViewData["Title"] = "Admin - Categorias";
+}
+
+<h2>Categorias</h2>
+<p><a class="btn btn-primary" href="/Admin/Categories/Create">Nova Categoria</a></p>
+<table class="table">
+    <thead><tr><th>Nome</th><th></th></tr></thead>
+    <tbody>
+    @foreach(var c in Model)
+    {
+        <tr>
+            <td>@c.Name</td>
+            <td>
+                <a class="btn btn-sm btn-secondary" href="/Admin/Categories/Edit/@c.Id">Editar</a>
+                <form method="post" asp-area="Admin" asp-controller="Categories" asp-action="Delete" class="d-inline delete-form" data-name="@c.Name">
+                    <input type="hidden" name="id" value="@c.Id" />
+                    <button type="submit" class="btn btn-sm btn-danger">Excluir</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

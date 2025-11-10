@@ -1,0 +1,29 @@
+
+@model MvcShop.Models.Product
+
+@{
+    ViewData["Title"] = "Excluir Produto";
+}
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title text-danger">Excluir Produto</h3>
+
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <img src="@(Model.ImageUrl ?? "https://via.placeholder.com/300x200")" class="img-fluid rounded" />
+            </div>
+            <div class="col-md-8">
+                <h5>@Model.Name</h5>
+                <p>@Model.Description</p>
+                <p><strong>Preço:</strong> @Model.Price.ToString("C")</p>
+            </div>
+        </div>
+
+        <form asp-action="Delete" method="post">
+            <input type="hidden" asp-for="Id" />
+            <button class="btn btn-danger">Confirmar exclusão</button>
+            <a class="btn btn-secondary ms-2" href="/Admin/Products">Cancelar</a>
+        </form>
+    </div>
+</div>
