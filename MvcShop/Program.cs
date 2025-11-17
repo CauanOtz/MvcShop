@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using MvcShop.Data;
 using System.IO;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,8 @@ var dbPath = Path.Combine(dbFolder, "MvcShop.db");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options => { options.IdleTimeout = TimeSpan.FromDays(7); options.Cookie.HttpOnly = true; });
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite($"Data Source={dbPath}"));
 
 var app = builder.Build();
@@ -24,6 +27,8 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseSession();
 
 app.MapControllerRoute(
     name: "areas",
