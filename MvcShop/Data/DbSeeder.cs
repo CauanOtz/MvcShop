@@ -23,16 +23,6 @@ namespace MvcShop.Data
             );
 
             db.SaveChanges();
-
-            // Seed some carousel images if none
-            if (!db.Set<MvcShop.Models.CarouselImage>().Any())
-            {
-                db.Set<MvcShop.Models.CarouselImage>().AddRange(
-                    new MvcShop.Models.CarouselImage { Title = "Promo 1", ImageUrl = "https://via.placeholder.com/1200x300?text=Carousel+1", SortOrder = 1 },
-                    new MvcShop.Models.CarouselImage { Title = "Promo 2", ImageUrl = "https://via.placeholder.com/1200x300?text=Carousel+2", SortOrder = 2 }
-                );
-                db.SaveChanges();
-            }
         }
     }
 }

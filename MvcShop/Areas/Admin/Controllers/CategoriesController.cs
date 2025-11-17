@@ -22,9 +22,14 @@ namespace MvcShop.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Category category)
         {
-            if (!ModelState.IsValid) return View(category);
+            if (!ModelState.IsValid)
+            {
+                TempData["Error"] = "Corrija os erros no formulário.";
+                return View(category);
+            }
             _db.Categories.Add(category);
             await _db.SaveChangesAsync();
+            TempData["Success"] = "Categoria criada com sucesso.";
             return RedirectToAction(nameof(Index));
         }
 
@@ -38,9 +43,14 @@ namespace MvcShop.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(Category category)
         {
-            if (!ModelState.IsValid) return View(category);
+            if (!ModelState.IsValid)
+            {
+                TempData["Error"] = "Corrija os erros no formulário.";
+                return View(category);
+            }
             _db.Categories.Update(category);
             await _db.SaveChangesAsync();
+            TempData["Success"] = "Categoria atualizada com sucesso.";
             return RedirectToAction(nameof(Index));
         }
 
@@ -59,6 +69,11 @@ namespace MvcShop.Areas.Admin.Controllers
             {
                 _db.Categories.Remove(c);
                 await _db.SaveChangesAsync();
+                TempData["Success"] = "Categoria excluída com sucesso.";
+            }
+            else
+            {
+                TempData["Error"] = "Categoria não encontrada.";
             }
             return RedirectToAction(nameof(Index));
         }

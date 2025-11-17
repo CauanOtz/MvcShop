@@ -8,8 +8,7 @@ namespace MvcShop.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
     // inicializadores para suprimir warnings de propriedades não nulas sem valor no construtor
-    public DbSet<Category> Categories { get; set; } = null!;
     public DbSet<Product> Products { get; set; } = null!;
-    public DbSet<MvcShop.Models.CarouselImage> CarouselImages { get; set; } = null!;
+    public DbSet<Category> Categories { get; set; } = null!;
     }
 }

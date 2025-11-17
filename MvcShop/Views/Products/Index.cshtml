@@ -16,7 +16,7 @@
             </div>
 
             <div class="row g-3">
-                @foreach(var p in cat.Products)
+                @foreach(var p in (cat.Products ?? new List<MvcShop.Models.Product>()).Take(8))
                 {
                     <div class="col-6 col-sm-4 col-md-3">
                         <div class="card h-100 shadow-sm">

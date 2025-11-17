@@ -9,8 +9,13 @@ namespace MvcShop.Controllers
         private readonly AppDbContext _db;
         public ProductsController(AppDbContext db) => _db = db;
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? category)
         {
+            if (category.HasValue)
+            {
+                var cats = await _db.Categories.Include(c => c.Products).Where(c => c.Id == category.Value).ToListAsync();
+                return View(cats);
+            }
             var categories = await _db.Categories.Include(c => c.Products).ToListAsync();
             return View(categories);
         }

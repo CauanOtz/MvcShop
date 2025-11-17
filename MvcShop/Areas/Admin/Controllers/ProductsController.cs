@@ -50,11 +50,13 @@ namespace MvcShop.Areas.Admin.Controllers
             if (!ModelState.IsValid)
             {
                 ViewBag.Categories = await _db.Categories.ToListAsync();
+                TempData["Error"] = "Corrija os erros no formulário.";
                 return View(product);
             }
 
             _db.Products.Add(product);
             await _db.SaveChangesAsync();
+            TempData["Success"] = "Produto criado com sucesso.";
             return RedirectToAction(nameof(Index));
         }
 
@@ -72,6 +74,7 @@ namespace MvcShop.Areas.Admin.Controllers
             if (!ModelState.IsValid)
             {
                 ViewBag.Categories = await _db.Categories.ToListAsync();
+                TempData["Error"] = "Corrija os erros no formulário.";
                 return View(product);
             }
 
@@ -96,6 +99,7 @@ namespace MvcShop.Areas.Admin.Controllers
 
             _db.Products.Update(existing);
             await _db.SaveChangesAsync();
+            TempData["Success"] = "Produto atualizado com sucesso.";
             return RedirectToAction(nameof(Index));
         }
 

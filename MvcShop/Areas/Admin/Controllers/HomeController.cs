@@ -11,8 +11,7 @@ namespace MvcShop.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            var items = _db.CarouselImages.OrderBy(c => c.SortOrder).ToList();
-            return View(items);
+            return View();
         }
     }
 }

@@ -4,21 +4,30 @@
     ViewData["Title"] = "Admin - Categorias";
 }
 
-<h2>Categorias</h2>
-<p><a class="btn btn-primary" href="/Admin/Categories/Create">Nova Categoria</a></p>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="mb-0">Categorias</h2>
+    <a class="btn btn-primary" asp-area="Admin" asp-controller="Categories" asp-action="Create">Nova Categoria</a>
+</div>
 <table class="table">
-    <thead><tr><th>Nome</th><th></th></tr></thead>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th style="width:1%;"></th>
+        </tr>
+    </thead>
     <tbody>
     @foreach(var c in Model)
     {
         <tr>
-            <td>@c.Name</td>
-            <td>
-                <a class="btn btn-sm btn-secondary" href="/Admin/Categories/Edit/@c.Id">Editar</a>
-                <form method="post" asp-area="Admin" asp-controller="Categories" asp-action="Delete" class="d-inline delete-form" data-name="@c.Name">
-                    <input type="hidden" name="id" value="@c.Id" />
-                    <button type="submit" class="btn btn-sm btn-danger">Excluir</button>
-                </form>
+            <td class="align-middle">@c.Name</td>
+            <td class="align-middle text-end">
+                <div class="d-inline-flex gap-2">
+                    <a class="btn btn-sm btn-secondary" asp-area="Admin" asp-controller="Categories" asp-action="Edit" asp-route-id="@c.Id">Editar</a>
+                    <form method="post" asp-area="Admin" asp-controller="Categories" asp-action="Delete" class="d-inline delete-form" data-name="@c.Name">
+                        <input type="hidden" name="id" value="@c.Id" />
+                        <button type="submit" class="btn btn-sm btn-danger">Excluir</button>
+                    </form>
+                </div>
             </td>
         </tr>
     }
